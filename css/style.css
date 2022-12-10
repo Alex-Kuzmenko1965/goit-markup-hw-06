@@ -954,9 +954,9 @@ img {
   position: absolute;
   top: 50%;
   right: 28px;
-  transform: translateY(-50%);
-  fill: var(--title-text-color);
+  transform: translateY(-50%);    
 }
+
 .footer-send-btn:focus ~ .send-icon {
   fill: var(--title-text-color);
 }

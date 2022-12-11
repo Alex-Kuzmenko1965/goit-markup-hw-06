@@ -267,8 +267,7 @@ body {
 
   min-width: 528px;
   min-height: 581px;
-  border-radius: 4px;
-  padding: 15px;
+  border-radius: 4px;  
   background: var(--light-color);
 }
 
@@ -313,17 +312,27 @@ body {
 
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
   color: var(--primary-text-color);
 
   transform: border-color 250ms var(--timing-function);
 }
 
-.modal-input:hover {
+.modal-input::placeholder {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border-color: var(--accent-color);  
+}
+
+.modal-input:not(:focus):not(:placeholder-shown):valid {
   background-color: transparent;
-  border-color: var(--accent-color);
-  
+}
+
+.modal-input:not(:focus):not(:placeholder-shown):invalid {
+  background-color: transparent;
 }
 
 .modal-input-group {
@@ -333,11 +342,8 @@ body {
 .modal-input-wrapper {
   position: relative;
 }
-.modal-checkbox {
-  display: block;
-  margin-bottom: 30px;
-}
-label {
+
+.lab-form {
   display: block;
   margin-bottom: 4px;
   font-weight: 400;
@@ -378,23 +384,33 @@ label {
   background-color: transparent;
   border-color: var(--accent-color);
 }
-.textarea::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+
+.modal-checkbox {
+  display: flex;
+  margin-bottom: 30px;
 }
-.conditions {  
+
+.check {
+  display: flex;
+  margin-right: 10px;
+}
+.modal-conditions {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.71;
   letter-spacing: 0.03em;  
   color: var(--secandary-text-color);
+}
+
+.modal-umovi {
+  display: flex;
+  justify-content: center;
+  margin-left: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: var(--accent-color);
 }
 
 .form-send-btn {
@@ -904,7 +920,7 @@ img {
   border-radius: 4px;
 
   font-weight: 400;
-  font-size: 16px;
+font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.6);

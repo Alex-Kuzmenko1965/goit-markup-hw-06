@@ -146,12 +146,6 @@ body {
   color: var(--accent-color);
 }
 
-.auth-mail-icon {   
-  margin-right: 10px;
-  fill: currentColor; 
-  
-  transition: color 250ms var(--timing-function);
-}
 
 .auth-mail,
 .auth-tel {
@@ -171,11 +165,18 @@ body {
   color: var(--accent-color);
 }
 
+.auth-mail-icon {
+  margin-right: 10px;
+  fill: currentColor;
+
+  transition: fill 250ms var(--timing-function);
+}
+
 .auth-tel-icon {  
   margin-right: 10px;
   fill: currentColor;
 
-  transition: color 250ms var(--timing-function);
+  transition: fill 250ms var(--timing-function);
 }
 /*---MAIN---*/
 .hero { 
@@ -970,9 +971,13 @@ font-size: 16px;
   position: absolute;
   top: 50%;
   right: 28px;
-  transform: translateY(-50%);    
+  transform: translateY(-50%);
+  fill: currentColor;
+  
+  transition: fill 250ms var(--timing-function);
 }
 
-.footer-send-btn:focus ~ .send-icon {
+.footer-send-btn:hover,
+.footer-send-btn:focus  > .send-icon {
   fill: var(--title-text-color);
 }
